@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio avec Connexion</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #0f172a;
+      color: #485672;
+    }
+
+    header {
+      background-color: #020617;
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img { 
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+    }
+
+    nav a {
+      color: #e5e7eb;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    section {
+      padding: 60px 30px;
+      display: none;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    /* Section Compétences */
+    #competences {
+      background: #f9f9f9;
+      padding: 50px;
+      text-align: center;
+    }
+
+    #competences h2 {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .skills-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .skill {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin: 15px;
+      width: 250px;
+      transition: transform 0.3s ease;
+    }
+
+    .skill:hover {
+      transform: translateY(-5px);
+    }
+
+    .skill h3 {
+      color: #007acc;
+      margin-bottom: 15px;
+    }
+
+    .skill ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .skill ul li {
+      margin: 8px 0;
+      font-size: 1.1em;
+    }
+
+    .hero {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url('https://images.unsplash.com/photo-1518770660439-4636190af475');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    h2 {
+      color: #38bdf8;
+      margin-bottom: 20px;
+    }
+
+    .login-box {
+      max-width: 400px;
+      margin: auto;
+      background-color: #020617;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+    }
+
+    .login-box button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background-color: #38bdf8;
+      color: #020617;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .login-box button:hover {
+      background-color: #0ea5e9;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #020617;
+      font-size: 0.9rem;
+      color: #e5e7eb;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="Z.jpg" alt="Logo" />
+      <span>Mon Portfolio</span>
+    </div>
+    <nav>
+      <a onclick="showSection('accueil')">Accueil</a>
+      <a onclick="showSection('about')">À propos</a>
+      <a onclick="showSection('competences')">Compétences</a>
+      <a onclick="showSection('connexion')">Connexion</a>
+      <a onclick="showSection('aide')">Aide</a>
+    </nav>
+  </header>
+
+  <!-- ACCUEIL PRINCIPAL -->
+  <section id="accueil" class="active">
+    <div class="hero">
+      <div>
+        <h1>Mon Portfolio</h1>
+        <p>Découvre mes projets et mes compétences.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section À propos -->
+  <section id="about">
+    <h2>À propos de moi</h2>
+    <p>Je suis Alvin, passionné d'informatique...</p>
+  </section>
+
+  <!-- Section Compétences -->
+  <section id="competences">
+    <h2>💻 Mes Compétences</h2>
+    <div class="skills-container">
+      <div class="skill">
+        <h3>Langages de programmation</h3>
+        <ul>
+          <li>Python 🐍</li>
+          <li>JavaScript ⚡</li>
+          <li>HTML & CSS 🎨</li>
+          <li>PHP 🌐</li>
+        </ul>
+      </div>
+      <div class="skill">
+        <h3>Frameworks & Outils</h3>
+        <ul>
+          <li>ReactJS ⚛️</li>
+          <li>Django 🟢</li>
+          <li>Node.js 🌱</li>
+          <li>Git & GitHub 🔗</li>
+        </ul>
+      </div>
+      <div class="skill">
+        <h3>Autres compétences</h3>
+        <ul>
+          <li>Gestion de bases de données (MySQL, MongoDB)</li>
+          <li>Cybersécurité (bases)</li>
+          <li>Design UI/UX 🎨</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACCUEIL CONNEXION -->
+  <section id="connexion">
+    <h2 style="text-align:center">Connexion</h2>
+    <div class="login-box">
+      <input type="tel" placeholder="Numéro de téléphone" />
+      <input type="password" placeholder="Mot de passe" />
+      <button>Se connecter</button>
+      <p style="text-align:center; margin-top:15px;">
+        Pas de compte ?
+        <span style="color:#38bdf8; cursor:pointer;" onclick="showSection('inscription')">
+          S'inscrire
+        </span>
+      </p>
+    </div>
+  </section>
+
+  <!-- INSCRIPTION -->
+  <section id="inscription">
+    <h2 style="text-align:center">Inscription</h2>
+    <div class="login-box">
+      <input type="text" placeholder="Nom complet" />
+      <input type="tel" placeholder="Numéro de téléphone" />
+      <input type="password" placeholder="Mot de passe" />
+      <input type="password" placeholder="Confirmer le mot de passe" />
+      <button>Créer un compte</button>
+      <p style="text-align:center; margin-top:15px;">
+        Déjà un compte ?
+        <span style="color:#38bdf8; cursor:pointer;" onclick="showSection('connexion')">
+          Se connecter
+        </span>
+      </p>
+    </div>
+  </section>
+
+  <!-- AIDE -->
+  <section id="aide">
+    <h2>Aide</h2>
+    <p>
+      ➜ Accueil : page principale du portfolio<br />
+      ➜ À propos : présentation personnelle<br />
+      ➜ Compétences : liste de mes savoir-faire<br />
+      ➜ Connexion : accès par numéro et mot de passe<br />
+      ➜ Aide : informations d'utilisation
+    </p>
+  </section>
+
+  <footer>
+    © 2026 – Portfolio personnel via Vlad New Home New
+  </footer>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(sec => {
+        sec.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+</html>
