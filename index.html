@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio avec Connexion</title>
+  <title>Portfolio Wilfried</title>
   <style>
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #0f172a;
-      color: #485672;
+      color: #e5e7eb;
     }
 
     header {
@@ -18,18 +18,15 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .logo img { 
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #38bdf8;
     }
 
     nav a {
@@ -46,23 +43,39 @@
 
     section {
       padding: 60px 30px;
-      display: none;
     }
 
-    section.active {
-      display: block;
+    .hero {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+      background-size: cover;
+      background-image: url(will.jpg) ;
+      background-position: center;
+      color: #fff;
     }
 
-    /* Section Compétences */
-    #competences {
-      background: #f9f9f9;
-      padding: 50px;
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    h2 {
+      color: #38bdf8;
+      margin-bottom: 20px;
       text-align: center;
     }
 
-    #competences h2 {
-      font-size: 2.5em;
-      margin-bottom: 30px;
+    /* Compétences */
+    #competences {
+      background: #f9f9f9;
       color: #333;
     }
 
@@ -73,8 +86,9 @@
     }
 
     .skill {
-      background: #fff;
+      background: #0c0000;
       border-radius: 10px;
+      color: white;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       padding: 20px;
       margin: 15px;
@@ -91,49 +105,37 @@
       margin-bottom: 15px;
     }
 
-    .skill ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .skill ul li {
-      margin: 8px 0;
-      font-size: 1.1em;
-    }
-
-    .hero {
-      min-height: 80vh;
+    /* Projets */
+    .projects {
       display: flex;
-      align-items: center;
       justify-content: center;
-      text-align: center;
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-        url('https://images.unsplash.com/photo-1518770660439-4636190af475');
-      background-size: cover;
-      background-position: center;
+      flex-wrap: wrap;
     }
 
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-      color: #fff;
+    .project {
+      background: #1e293b;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 15px;
+      width: 280px;
+      color: #e5e7eb;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
 
-    h2 {
+    .project h3 {
       color: #38bdf8;
-      margin-bottom: 20px;
     }
 
-    .login-box {
-      max-width: 400px;
+    /* Contact */
+    .contact-form {
+      max-width: 500px;
       margin: auto;
-      background-color: #020617;
+      background: #1e293b;
       padding: 30px;
       border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
     }
 
-    .login-box input {
+    .contact-form input, .contact-form textarea {
       width: 100%;
       padding: 12px;
       margin-bottom: 15px;
@@ -142,7 +144,7 @@
       outline: none;
     }
 
-    .login-box button {
+    .contact-form button {
       width: 100%;
       padding: 12px;
       border: none;
@@ -153,7 +155,7 @@
       cursor: pointer;
     }
 
-    .login-box button:hover {
+    .contact-form button:hover {
       background-color: #0ea5e9;
     }
 
@@ -169,41 +171,39 @@
 <body>
 
   <header>
-    <div class="logo">
-      <img src="Z.jpg" alt="Logo" />
-      <span>Mon Portfolio</span>
-    </div>
+    <div class="logo">Wilfried Portfolio</div>
     <nav>
-      <a onclick="showSection('accueil')">Accueil</a>
-      <a onclick="showSection('about')">À propos</a>
-      <a onclick="showSection('competences')">Compétences</a>
-      <a onclick="showSection('connexion')">Connexion</a>
-      <a onclick="showSection('aide')">Aide</a>
+      <a href="#accueil">Accueil</a>
+      <a href="#about">À propos</a>
+      <a href="#competences">Compétences</a>
+      <a href="#projets">Projets</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <!-- ACCUEIL PRINCIPAL -->
-  <section id="accueil" class="active">
-    <div class="hero">
-      <div>
-        <h1>Mon Portfolio</h1>
-        <p>Découvre mes projets et mes compétences.</p>
-      </div>
+  <!-- Accueil -->
+  <section id="accueil" class="hero">
+    <div>
+      <h1>Bienvenue sur mon Portfolio</h1>
+      <p>Je suis Wilfried, passionné d'informatique et de développement web.</p>
     </div>
   </section>
 
-  <!-- Section À propos -->
+  <!-- À propos -->
   <section id="about">
     <h2>À propos de moi</h2>
-    <p>Je suis Alvin, passionné d'informatique...</p>
+    <p style="text-align:center; max-width:700px; margin:auto;">
+      Je suis un développeur motivé, créatif et passionné par les nouvelles technologies.
+      J’aime concevoir des solutions modernes  et efficace concernant le web et l’informatique.
+    </p>
   </section>
 
-  <!-- Section Compétences -->
+  <!-- Compétences -->
   <section id="competences">
     <h2>💻 Mes Compétences</h2>
     <div class="skills-container">
       <div class="skill">
-        <h3>Langages de programmation</h3>
+        <h3>Langages</h3>
         <ul>
           <li>Python 🐍</li>
           <li>JavaScript ⚡</li>
@@ -221,73 +221,49 @@
         </ul>
       </div>
       <div class="skill">
-        <h3>Autres compétences</h3>
+        <h3>Autres</h3>
         <ul>
-          <li>Gestion de bases de données (MySQL, MongoDB)</li>
+          <li>Bases de données (MySQL, MongoDB)</li>
           <li>Cybersécurité (bases)</li>
-          <li>Design UI/UX 🎨</li>
+          <li>UI/UX Design 🎨</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- ACCUEIL CONNEXION -->
-  <section id="connexion">
-    <h2 style="text-align:center">Connexion</h2>
-    <div class="login-box">
-      <input type="tel" placeholder="Numéro de téléphone" />
-      <input type="password" placeholder="Mot de passe" />
-      <button>Se connecter</button>
-      <p style="text-align:center; margin-top:15px;">
-        Pas de compte ?
-        <span style="color:#38bdf8; cursor:pointer;" onclick="showSection('inscription')">
-          S'inscrire
-        </span>
-      </p>
+  <!-- Projets -->
+  <section id="projets">
+    <h2>🚀 Mes Projets</h2>
+    <div class="projects">
+      <div class="project">
+        <h3>Site E-commerce</h3>
+        <p>Développement d’un site e-commerce avec React et Node.js.</p>
+      </div>
+      <div class="project">
+        <h3>Application Python</h3>
+        <p>Création d’un outil de gestion de données en Python.</p>
+      </div>
+      <div class="project">
+        <h3>Portfolio Web</h3>
+        <p>Mon propre portfolio codé en HTML, CSS et JavaScript.</p>
+      </div>
     </div>
   </section>
 
-  <!-- INSCRIPTION -->
-  <section id="inscription">
-    <h2 style="text-align:center">Inscription</h2>
-    <div class="login-box">
-      <input type="text" placeholder="Nom complet" />
-      <input type="tel" placeholder="Numéro de téléphone" />
-      <input type="password" placeholder="Mot de passe" />
-      <input type="password" placeholder="Confirmer le mot de passe" />
-      <button>Créer un compte</button>
-      <p style="text-align:center; margin-top:15px;">
-        Déjà un compte ?
-        <span style="color:#38bdf8; cursor:pointer;" onclick="showSection('connexion')">
-          Se connecter
-        </span>
-      </p>
+  <!-- Contact -->
+  <section id="contact">
+    <h2>📩 Me Contacter</h2>
+    <div class="contact-form">
+      <input type="text" placeholder="Nom" />
+      <input type="email" placeholder="Addresse email" />
+      <textarea rows="5" placeholder=" Message"></textarea>
+      <button>Envoyer</button>
     </div>
-  </section>
-
-  <!-- AIDE -->
-  <section id="aide">
-    <h2>Aide</h2>
-    <p>
-      ➜ Accueil : page principale du portfolio<br />
-      ➜ À propos : présentation personnelle<br />
-      ➜ Compétences : liste de mes savoir-faire<br />
-      ➜ Connexion : accès par numéro et mot de passe<br />
-      ➜ Aide : informations d'utilisation
-    </p>
   </section>
 
   <footer>
-    © 2026 – Portfolio personnel via Vlad New Home New
+    © 2026 – Portfolio WayleCORP | Créé avec professionnalisme et passion
   </footer>
 
-  <script>
-    function showSection(id) {
-      document.querySelectorAll('section').forEach(sec => {
-        sec.classList.remove('active');
-      });
-      document.getElementById(id).classList.add('active');
-    }
-  </script>
 </body>
 </html>
